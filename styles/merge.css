@@ -1,0 +1,260 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #212121;
+    color: #fff;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Navigation Bar */
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+header nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero .title h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero .title p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero .cta-button {
+    margin-top: 20px;
+    background-color: #ff9800;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.hero .cta-button:hover {
+    background-color: #f57c00;
+}
+
+/* Team Section */
+.team {
+    padding: 40px 0;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    width: 18%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Technologies Section */
+.technologies {
+    background-color: #fff;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.technologies h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.tech-card {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.tech-card h3 {
+    margin: 20px 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.tech-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.tech-card .read-more {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tech-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* Call to Action Section */
+.cta {
+    background-color: #ff9800;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.cta .cta-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta .cta-button:hover {
+    background-color: #f5f5f5;
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 100%;
+    }
+}

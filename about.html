@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysium Elite - Smart Agriculture Solutions</title>
+    <link rel="stylesheet" href="styles/style_about.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head> 
+
+<body>
+    <header>
+        <!-- Enhanced navigation with larger, clear links -->
+        <div class="logo">
+            <a href="index.html"><img src="styles/images/Logo.png" alt="Elysium logo"></a>
+        </div>
+        <div class="navDiv">
+            <label for="menu"><i class="fa-solid fa-bars"></i></label>
+        </div>
+        <input type="checkbox" id="menu">
+        <nav>
+            <ul class="nav">
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="technologies.html">Technologies</a></li> <!--New Page-->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Enhanced Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <video autoplay muted loop id="background-video">
+                    <source src="styles/images/Herbarium.mp4" type="video/mp4">
+                </video>
+                <div class="title">
+                    <h1>Elysium Leadership</h1>
+                    <p>Cultivating Excellence for Sustainable Growth</p>
+                    <a href="learn-more.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-box">
+                <div class="stat-label">Users</div>
+                <div class="stat" id="stat1" data-target="150">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Sales</div>
+                <div class="stat" id="stat2" data-target="300">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Revenue</div>
+                <div class="stat" id="stat3" data-target="450">0</div>
+            </div>
+        </section>
+        
+
+        <section class="team_details">
+            <h2>Team Details</h2>
+                <div class="tech-container">
+                    <div class="tech-card">
+                        <h4>Group name</h4>
+                        <h3>Elysium</h3>
+                        <h4>Group ID</h4>
+                        <h5>104974280 - 104997232 - 104974743</h5>
+                        <h5>105028557 - 104995595</h5>
+                        <h4>Tutor name</h4>
+                        <h5>Hang Sam Nang</h5>
+                        <h4>Course we are doing</h4>
+                        <h5>COS20031 - Computing Technology Design Project</h5>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Technology Section: Smart Greenhouses -->
+        <section class="technologies">
+            <h2>Our Technologies</h2>
+            <div class="tech-container">
+                <div class="tech-card">
+                    <img src="styles/images/smart-greenhouse.png" alt="Smart Greenhouse">
+                    <h3>Smart Greenhouses</h3>
+                    <p>Our greenhouses are equipped with AI and IoT to monitor and adjust environmental factors in real-time, ensuring optimal crop growth.</p>
+                    <a href="smart-greenhouses.html" class="read-more">Read More</a>
+                </div>
+                <div class="tech-card">
+                    <img src="styles/images/iot.png" alt="IoT Sensors">
+                    <h3>IoT Sensors</h3>
+                    <p>We deploy IoT sensors to gather real-time data on temperature, humidity, and soil moisture levels for precision farming.</p>
+                    <a href="iot.html" class="read-more">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet Our Team Section -->
+        <section class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="images/PM.png" alt="Project Manager">
+                    <h3>Nguyen Le Truong Thien</h3>
+                    <p><strong>Project Manager</strong></p>
+                    <p>Leading our efforts in AI-driven agriculture innovations, with expertise in project management and sustainability.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="images/SE.png" alt="Software Engineer">
+                    <h3>Le Nguyen Dang Duy</h3>
+                    <p><strong>Software Engineer</strong></p>
+                    <p>Building reliable, scalable software that optimizes greenhouse operations using AI.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="images/DE.png" alt="Data Engineer">
+                    <h3>Mai Minh Phuong Anh</h3>
+                    <p><strong>Data Engineer</strong></p>
+                    <p>Ensuring seamless data flow from IoT sensors to AI models, enabling data-driven decision-making.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="images/UI-UX.png" alt="UI/UX Designer">
+                    <h3>Nguyen Minh Duy</h3>
+                    <p><strong>UI/UX Designer</strong></p>
+                    <p>Designing intuitive interfaces that make managing smart greenhouses a seamless experience.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="images/AIE.png" alt="AI Engineer">
+                    <h3>Phan Cong Hung</h3>
+                    <p><strong>AI Engineer</strong></p>
+                    <p>Developing machine learning models that automate and optimize greenhouse operations.</p>
+                </div>
+            </div>
+
+            <!-- Toggleable More Details Section -->
+            <h3 class="toggle-details">More Details</h3>
+            <div class="outline" id="details" style="display: none;">
+                <h3>Meet our Project Manager</h3>
+                        <p>As the Project Manager of Elysium, I bring a wealth of experience in overseeing complex projects that integrate cutting-edge AI and IoT solutions for agriculture. With a degree from Swinburne University, my focus has been on delivering innovative and sustainable solutions that align with our mission of transforming modern greenhouses.</p>
+                        <p>Driven by a passion for technology and innovation, I lead Elysium’s efforts in project planning and execution, ensuring that every phase of development is aligned with our goals. My commitment to collaboration allows our team to thrive and produce exceptional results.</p>
+                        <p>At Elysium, we are not just creating solutions; we are building the future of sustainable agriculture. My role as Project Manager is to guide our team through this journey, ensuring that every step forward is grounded in excellence, innovation, and a shared vision for success.</p>
+                <h3>Meet our Software Engineer</h3>
+                    <p>As the Software Engineer at Elysium, I specialize in developing the core systems that power our smart greenhouse solutions. With a strong background in computer science and years of experience in AI-driven automation, my goal is to build reliable, scalable software that optimizes greenhouse operations.</p>
+                    <p>I am passionate about leveraging the power of AI and IoT to transform how agriculture operates, driving efficiency and sustainability. My work at Elysium involves not just building software, but crafting solutions that improve crop yields and reduce resource consumption.</p>
+                    <p>At Elysium, I collaborate with AI engineers and data analysts to ensure our systems are optimized for real-world applications. Together, we push the boundaries of what’s possible in agriculture technology, creating a future where farming is smarter and more sustainable.</p>
+                <h3>Meet our Data Engineer</h3>
+                    <p>As the Data Engineer at Elysium, I am responsible for ensuring the seamless flow of data from our IoT sensors to our AI models, enabling data-driven decision-making for our greenhouse systems. My expertise lies in building data pipelines that are reliable, efficient, and scalable to meet the demands of modern agriculture.</p>
+                    <p>I am passionate about the intersection of data and sustainability, and I work closely with the team to develop systems that provide actionable insights to farmers and operators. My work enables Elysium to lead in the smart greenhouse industry, where data is key to optimizing growth and reducing environmental impact</p>
+                    <p>At Elysium, I play a key role in driving innovation through data, ensuring that our solutions are always improving and evolving to meet the needs of modern agriculture. Together, we’re building the future of farming, one data point at a time.</p>
+                <h3>Meet our UI/UX Designer</h3>
+                    <p>As the UI/UX Designer at Elysium, my role is to create intuitive, user-friendly interfaces that make managing smart greenhouses a seamless experience. With a passion for design and a deep understanding of user behavior, I ensure that our applications not only look great but are also easy to use.</p>
+                    <p>I work closely with our software and AI teams to design dashboards and mobile applications that empower users to monitor and control their greenhouses effortlessly. My goal is to create designs that make complex data accessible, actionable, and visually appealing.</p>
+                    <p>At Elysium, design is more than aesthetics—it's about enhancing the user experience and ensuring that our technology is easy to adopt. Through thoughtful design, I contribute to making agriculture smarter, more efficient, and more enjoyable for our users.</p>
+                <h3>Meet our AI Engineer</h3>
+                    <p>As the AI Engineer at Elysium, I lead the development of machine learning models that automate and optimize greenhouse operations. With a background in AI and data science, my focus is on building intelligent systems that adapt to environmental changes and provide real-time insights to greenhouse operators.</p>
+                    <p>My work involves designing algorithms that help predict environmental conditions, optimize resource use, and improve crop yields. I am driven by a desire to leverage AI for positive change, creating solutions that not only improve farming efficiency but also promote sustainability.</p>
+                    <p>At Elysium, I collaborate with data engineers, software developers, and agricultural experts to bring AI to the forefront of farming technology. Together, we are building systems that will revolutionize how agriculture is managed, making it smarter and more sustainable for the future.</p>
+            </div>
+        </section>
+        
+        <!-- Call to Action Section -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2>Join Us in Revolutionizing Agriculture</h2>
+                <p>Be part of our journey to create cutting-edge smart greenhouses for the future of farming.</p>
+                <a href="jobs.html" class="cta-button">Explore Career Opportunities</a>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer>
+        <section class="footer-section">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Elysium</h3>
+                    <p>Leading the future of smart agriculture through innovative AI and IoT solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Location</h3>
+                    <p>Ho Chi Minh City, Vietnam</p>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 Elysium Inc. All rights reserved.
+            </div>
+        </section>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysium Application</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="styles/images/Logo.png" alt="Synthiq logo"></a>
+        </div>
+
+        <div class="navDiv">
+            <label for="menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+        </div>
+
+        <input type="checkbox" id="menu">
+        <nav>
+            <ul class="nav">
+                <li><label for="menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--Section 1-->
+        <section class="hero synthiq-success" id="3">
+            <div class="container">
+                <div class="title title-dark">
+                    <h2 class="title-heading" id="logo-banner-heading">Elysium</h2>
+                    <h3 class="title-sub-heading"><em>Synthesize Success: Elevate Your IQ in Style.</em></h3>
+                </div>
+            </div>
+        </section>
+
+        <!--Section 2-->
+        <section class="hero synthiq-slogan" id="6">
+            <div class="container">
+                <div class="title">
+                    <h2 id="slogan">Where imagination unites, elevating values to extraordinary work. Join us not just
+                        to be a part, but to contribute something exceptional.</h2>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--Form-->
+        <section class="form-background" id="7">
+            <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+                <h2 class="form-title">Application Form</h2>
+                <label for="jobReferenceNumber">Job Reference Number:</label>
+                <input type="text" id="jobReferenceNumber" name="jobReferenceNumber" pattern="[A-Za-z0-9]{5}"
+                    placeholder="ELYS#">
+
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Enter first name" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" maxlength="20" placeholder="Enter last name" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="DD/MM/YYYY" required>
+
+                <fieldset>
+                    <legend>Gender:</legend>
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="other" required> Other</label>
+                </fieldset>
+
+                <label for="streetAddress">Street Address:</label>
+                <input type="text" id="streetAddress" name="streetAddress" maxlength="40" placeholder="Enter street address" required>
+
+                <label for="suburb">Suburb/Town:</label>
+                <input type="text" id="suburb" name="suburb" maxlength="40" placeholder="Enter Suburb/Town" required>
+
+                <label for="postcode">Postcode:</label>
+                <input type="text" id="postcode" name="postcode" pattern="\d{4}" placeholder="Enter postcode" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9\s]{8,12}" required>
+
+                <fieldset>
+                    <legend>Skill List:</legend>
+                    <label><input type="checkbox" name="skill" value="java">Java</label>
+                    <label><input type="checkbox" name="skill" value="c++">C++</label>
+                    <label><input type="checkbox" name="skill" value="python">Python</label>
+                    <label><input type="checkbox" name="skill" value="r">R</label>
+                    <label><input type="checkbox" name="skill" value="sql">SQL</label>
+                    <label><input type="checkbox" name="skill" value="otherSkills">Other Skills...</label>
+                    <label for="otherSkills">Other Skills:</label>
+                    <textarea id="otherSkills" rows="4" cols="50"></textarea>
+                </fieldset>
+
+                <input type="submit" value="Apply">
+            </form>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer>
+        <section class="footer-section">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Elysium</h3>
+                    <p>Leading the future of smart agriculture through innovative AI and IoT solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Location</h3>
+                    <p>Ho Chi Minh City, Vietnam</p>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 Elysium Inc. All rights reserved.
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

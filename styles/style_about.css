@@ -1,0 +1,438 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #212121;
+    color: #fff;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.navDiv {
+    display: none;
+}
+
+header label {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* stats Section */
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+}
+
+.stat-label {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.stat {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+.hero video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero .title h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero .title p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 1024px) {
+    .hero .title h1 {
+        scale: 100%;
+        /* 3 members per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .title {
+        scale: 100%;
+        /* 2 members per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .title h1 {
+        scale: 60%;
+        white-space: nowrap;
+        /* Full width on mobile screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .title p {
+        scale: 70%;
+        white-space: nowrap;
+        /* Full width on mobile screens */
+    }
+}
+
+
+.hero .cta-button {
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.hero .cta-button:hover {
+    background-color: #f57c00;
+}
+
+/* Team Details Section */
+
+.team_details {
+    background-image: url('images/tree.gif');
+    background-size: 100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    /* Background configure */
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.team_details h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.team_details h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.team_details .tech-container .tech-card {
+    width: 600px;
+}
+
+/* Technologies Section */
+.technologies {
+    background-color: #fff;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.technologies h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.tech-card {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.tech-card h3 {
+    margin: 20px 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.tech-card h4 {
+    margin: 20px 0 10px;
+    font-size: 18px;
+    color: #666;
+    font-weight: lighter;
+}
+
+.tech-card h5 {
+    margin: 20px 0 10px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.tech-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.tech-card .read-more {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+
+.tech-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* Team Section */
+.team {
+    padding: 30px 0;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.team h3 {
+    padding-top: 4rem;
+    font-size: large;
+}
+
+.team .outline p {
+    padding: 2rem;
+    font-size: medium;
+    align-items: center;
+    padding-right: 20rem;
+    padding-left: 20rem;
+}
+
+.team h2 {
+    font-size: 28px;
+    /* Slightly smaller heading */
+    margin-bottom: 30px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* Reduced gap for a more compact layout */
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    /* Reduced padding for more compact cards */
+    width: 18%;
+    /* Adjusted width to fit 5 members in a row */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+
+.team-member h3 {
+    font-size: 18px;
+    /* Reduced font size */
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.team-member p {
+    font-size: 14px;
+    /* Smaller text */
+    color: #666;
+    margin-bottom: 5px;
+    /* Reduced bottom margin */
+}
+
+/* Hover More Details */
+
+.toggle-details {
+    cursor: pointer;
+    color: #0F4930;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.toggle-details:hover {
+    color: #ff9800;
+}
+
+
+
+/* Hidden More Details Section */
+#details {
+    display: none;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+/* Smooth transition for showing content */
+.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .team-member {
+        width: 30%;
+        /* 3 members per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 48%;
+        /* 2 members per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%;
+        /* Full width on mobile screens */
+    }
+}
+
+
+
+/* Call to Action Section */
+.cta {
+    background-color: #16605E;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.cta .cta-button {
+    margin-top: 5px;
+    /* Điều chỉnh khoảng cách theo nhu cầu của bạn */
+    padding: 10px 20px;
+    background-color: #18764E;
+    /* Ví dụ về màu nền */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.cta .cta-button:hover {
+    background-color: #20A069;
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tech-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 100%;
+    }
+}
