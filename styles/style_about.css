@@ -38,20 +38,21 @@ header label {
 /* stats Section */
 
 .stats-section {
+    background-image: url('images/Data Circle.gif');
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-position: center;
 }
 
 .stat-box {
     text-align: center;
-    padding: 25px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #243642;
+    padding: 15px 25px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
@@ -60,15 +61,16 @@ header label {
 }
 
 .stat-label {
-    font-size: 1.2em;
-    color: #666;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .stat {
     font-size: 2.5em;
     font-weight: bold;
-    color: #333;
+    color: #fff;
 }
 
 
