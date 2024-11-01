@@ -3,7 +3,7 @@
 .jobs-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('./images/AI.gif');
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     background-size: cover;
@@ -14,14 +14,14 @@
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 60px;
+    margin-top: 30px;
 }
 
 .stat-item {
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px 30px;
+    padding: 25px 40px;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease;
@@ -108,12 +108,14 @@
 .category-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 90px;
-    padding: 0 20px;
+    gap: 40px;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .category-card {
-    padding: 30px;
+    padding: 35px;
     border-radius: 15px;
     text-align: center;
     text-decoration: none;
@@ -184,7 +186,7 @@
 
 /* Position Sections */
 .position-section-1 {
-    padding: 100px 0;
+    padding: 80px 0;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('./images/background_3.jpg');
     position: relative;
@@ -192,7 +194,7 @@
 }
 
 .position-section-2 {
-    padding: 100px 0;
+    padding: 80px 0;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('./images/background_2.jpg');
     position: relative;
@@ -280,7 +282,7 @@
 .requirements-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin: 40px 0;
 }
 
@@ -435,15 +437,15 @@
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 30px;
     padding: 20px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .benefit-card {
     background: #fff;
-    padding: 40px 30px;
+    padding: 35px 25px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -636,4 +638,23 @@
     background: rgba(233, 180, 76, 0.2);
     color: #e9b44c;
     border: 1px solid rgba(233, 180, 76, 0.3);
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+
+    .category-grid,
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
