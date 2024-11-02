@@ -680,3 +680,60 @@
     margin: 0 auto;
     padding: 0 40px;
 }
+
+/* Existing position-overview styles */
+.position-overview {
+    background: #243833;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    margin-left: 30rem;
+    margin-right: 30rem;
+}
+
+/* Add new responsive styles */
+@media (max-width: 1200px) {
+    .position-overview {
+        margin-left: 20rem;
+        margin-right: 20rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .position-overview {
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .position-overview {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .position-overview h3 {
+        font-size: 2rem;
+    }
+
+    .position-overview p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .position-overview {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        padding: 15px;
+    }
+
+    .position-overview h3 {
+        font-size: 1.8rem;
+    }
+
+    .position-overview p {
+        font-size: 1.4rem;
+    }
+}

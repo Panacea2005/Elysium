@@ -411,12 +411,10 @@ footer:not(.footer-section) {
 
 /*jobs.html styles*/
 .synthiq-success {
-    background: url("images/synthiq-meaning-2.png");
+    background: url("./images/background_5/1101.gif");
     background-position: center;
-    background-size: cover;
-    max-width: 100%;
-    border-top: none;
-    opacity: 0.8;
+    background-size: 40%;
+    background-repeat: no-repeat;
 }
 
 .synthiq-ai-engineer {

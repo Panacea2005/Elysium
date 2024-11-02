@@ -95,6 +95,8 @@ header label {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 90%;
+    max-width: 800px;
 }
 
 .hero .title h1 {
@@ -111,31 +113,37 @@ header label {
 
 @media (max-width: 1024px) {
     .hero .title h1 {
-        scale: 100%;
-        /* 3 members per row on medium screens */
+        font-size: 40px;
+    }
+
+    .hero .title p {
+        font-size: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .hero .title {
-        scale: 100%;
-        /* 2 members per row on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
     .hero .title h1 {
-        scale: 60%;
-        white-space: nowrap;
-        /* Full width on mobile screens */
+        font-size: 32px;
+    }
+
+    .hero .title p {
+        font-size: 18px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero .title {
+        width: 95%;
+    }
+
+    .hero .title h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
     .hero .title p {
-        scale: 70%;
-        white-space: nowrap;
-        /* Full width on mobile screens */
+        font-size: 16px;
+        margin-bottom: 15px;
     }
 }
 
@@ -181,7 +189,7 @@ header label {
 }
 
 .team_details .tech-container .tech-card {
-    width: 600px;
+    width: 358px;
 }
 
 /* Technologies Section */
@@ -201,6 +209,7 @@ header label {
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+    padding: 0 20px;
 }
 
 .tech-card {
@@ -210,6 +219,7 @@ header label {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .tech-card img {
@@ -436,5 +446,56 @@ footer a:hover {
 
     .team-member {
         width: 100%;
+    }
+}
+
+/* Add new responsive styles */
+@media (max-width: 1200px) {
+    .tech-card {
+        width: calc(50% - 40px);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 992px) {
+    .tech-container {
+        gap: 30px;
+    }
+
+    .tech-card {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-container {
+        gap: 20px;
+    }
+
+    .tech-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .tech-card h3 {
+        font-size: 20px;
+    }
+
+    .tech-card p {
+        font-size: 14px;
+    }
+
+    .tech-card .read-more {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-container {
+        padding: 0 15px;
+    }
+
+    .tech-card {
+        padding: 15px;
     }
 }
