@@ -1116,14 +1116,14 @@ tfoot td {
 
 .smart-greenhouse-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("./images/synthiq-meaning-1.png");
+        url("./images/background_5/background_5\(1\).gif");
     background-size: cover;
     background-position: center;
 }
 
 .cta-link-demo {
     color: #ffffff;
-    background: #24dfad;
+    background: #148567a1;
     padding: 12px 24px;
     border-radius: 5px;
     margin-left: 20px;
@@ -1132,7 +1132,7 @@ tfoot td {
 }
 
 .cta-link-demo:hover {
-    background: #148567a1;
+    background: #17ae86a1;
     font-weight: 600;
 }
 
@@ -1308,4 +1308,43 @@ tfoot td {
     .benefit-card p {
         font-size: 1.4rem;
     }
+}
+
+/* Hero Section cho trang chủ */
+.main-hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.main-hero #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Hero content styles */
+.main-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
 }
