@@ -28,7 +28,7 @@ header a:hover {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: calc(100% - 20px);
     padding: 10px;
@@ -36,13 +36,28 @@ header {
     grid-template-columns: 30% 70%;
     background-color: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(2rem);
-    z-index: 1;
+    z-index: 999;
     height: 40px;
+}
+
+header nav ul li a {
+    transition: color 0.3s ease;
+}
+
+
+header nav ul li a:hover {
+    color: #24dfad;
 }
 
 header .logo img {
     height: 40px;
+    transition: transform 0.3s ease;
 }
+
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
 
 nav {
     position: static;
@@ -411,11 +426,19 @@ footer:not(.footer-section) {
 
 /*jobs.html styles*/
 .synthiq-success {
-    background: url("./images/background_5/1101.gif");
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+        url('./images/background_5/1101.gif');
     background-position: center;
     background-size: 40%;
     background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 767px) {
+    .synthiq-success {
+        background-size: 100%;
+    }
+}
+
 
 .synthiq-ai-engineer {
     background: url("images/AI.gif");
@@ -954,7 +977,7 @@ tfoot td {
     header nav .nav {
         position: fixed;
         background-color: #000;
-        z-index: 1;
+        z-index: 1000;
         width: 70%;
         height: 100vh;
         left: 0;
