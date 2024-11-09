@@ -63,11 +63,34 @@ header {
 
 .tech-hero p {
     font-size: 2.4rem;
-    color: var(--text-secondary);
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+    letter-spacing: 5px;
+    line-height: 1.1;
+    background: linear-gradient(90deg,
+            rgba(36, 223, 173, 0.2),
+            rgba(255, 255, 255, 1),
+            rgba(36, 223, 173, 0.2));
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3.5s linear infinite;
+    /* Increased from 3s to 5s */
 }
+
+@keyframes shine {
+    0% {
+        background-position-x: -200%;
+    }
+
+    100% {
+        background-position-x: 200%;
+    }
+}
+
 
 @keyframes patternFloat {
     0% {
@@ -216,25 +239,14 @@ header {
     transform: translateY(-2px);
 }
 
-@media (max-width: 1200px) {
-    .dashboard-content {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .dashboard-text {
-        padding-right: 0;
-        text-align: center;
-    }
-
-    .feature-list li {
-        justify-content: center;
-    }
-}
 
 @media (max-width: 768px) {
     .dashboard-text h2 {
         font-size: 3.6rem;
+    }
+
+    .feature-list {
+        text-align: left;
     }
 
     .section-desc {
@@ -392,7 +404,12 @@ header {
 /* Features Section */
 .tech-features {
     padding: 100px 0;
-    background: #0a192f;
+    background: linear-gradient(rgba(10, 25, 47, 0.95), #161a1f),
+        url('images/Herbarium.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
 }
 
@@ -546,6 +563,7 @@ h2 {
     grid-template-columns: 1fr 1.5fr;
     gap: 50px;
     align-items: center;
+    padding: 0 20px;
 }
 
 .feature-list {
@@ -1141,8 +1159,8 @@ h2 {
     }
 
     .feature-list li {
-        justify-content: center;
-        margin-left: 0;
+        justify-content: left;
+        margin-left: 2rem;
     }
 
     .dashboard-image {
@@ -1513,4 +1531,45 @@ input[type=radio] {
 #light-2:checked~.sensor-info-panel #light-details-2,
 #light-3:checked~.sensor-info-panel #light-details-3 {
     display: block;
+}
+
+.carousel-section .container h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: #46d4c0;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.carousel-section .container h2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #24dfad;
+    border-radius: 2px;
+}
+
+.carousel-section .container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 120px;
+    height: 4px;
+    background: #e9b44c;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-section .container h2:hover::after {
+    transform: translateX(-50%) scale(1);
 }

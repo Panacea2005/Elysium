@@ -160,3 +160,59 @@ document.querySelector('.toggle-details').addEventListener('click', function() {
         this.textContent = 'More Details'; // Change text back to 'More Details' when hidden
     }
 });
+
+// FADE FADE FADE
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize ScrollReveal
+    const sr = ScrollReveal({
+        distance: '30px',
+        duration: 800,
+        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        interval: 100,
+        scale: 1,
+        viewFactor: 0.3,
+        mobile: true
+    });
+
+    // Reveal animations
+    sr.reveal('.reveal-fade-up', {
+        origin: 'bottom',
+        cleanup: true
+    });
+
+    sr.reveal('.reveal-fade-left', {
+        origin: 'left',
+        cleanup: true
+    });
+
+    sr.reveal('.reveal-fade-right', {
+        origin: 'right',
+        cleanup: true
+    });
+
+    // Add scroll-based parallax effect for existing elements
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.dashboard-preview::before');
+        
+        parallaxElements.forEach(element => {
+            const speed = 0.5;
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
+    // Enhance existing animations
+    const existingAnimations = {
+        '.tech-hero h1': { delay: 200 },
+        '.tech-hero p': { delay: 400 },
+        '.dashboard-image': { delay: 300 },
+        '.sensor-card': { interval: 150 },
+        '.feature-list li': { interval: 100 },
+        '.point': { interval: 200 }
+    };
+
+    Object.entries(existingAnimations).forEach(([selector, options]) => {
+        sr.reveal(selector, options);
+    });
+});
