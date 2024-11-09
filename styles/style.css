@@ -426,8 +426,7 @@ footer:not(.footer-section) {
 
 /*jobs.html styles*/
 .synthiq-success {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-        url('./images/background_5/1101.gif');
+    background-image: url('./images/background_5/1101.gif');
     background-position: center;
     background-size: 40%;
     background-repeat: no-repeat;
