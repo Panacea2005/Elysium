@@ -29,9 +29,10 @@
     height: 100%;
     background:
         linear-gradient(45deg, rgba(36, 223, 173, 0.1) 0%, transparent 100%),
-        url('./images/tech-pattern.svg');
+        url('./images/background_4.gif');
+    background-size: cover;
+    background-position: center;
     opacity: 0.1;
-    animation: patternFloat 30s linear infinite;
 }
 
 .tech-hero .hero-content {
@@ -424,7 +425,7 @@
 
 /* Common Styles */
 .container {
-    max-width: 1500px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -1234,4 +1235,278 @@ h2 {
     .sensor-card {
         margin: 0 15px;
     }
+}
+
+/* Carousel Section */
+.carousel-section {
+    padding: 50px 0;
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.card {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.card-content {
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(36, 223, 173, 0.05);
+    border: 1px solid rgba(36, 223, 173, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.card-content img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-info {
+    padding: 20px;
+    color: var(--text-primary);
+}
+
+.card-info h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+}
+
+/* Control visibility based on radio selection */
+#item-1:checked~.cards #sensor-3,
+#item-2:checked~.cards #sensor-1,
+#item-3:checked~.cards #sensor-2 {
+    transform: translatex(-40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+#item-1:checked~.cards #sensor-2,
+#item-2:checked~.cards #sensor-3,
+#item-3:checked~.cards #sensor-1 {
+    transform: translatex(40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+#item-1:checked~.cards #sensor-1,
+#item-2:checked~.cards #sensor-2,
+#item-3:checked~.cards #sensor-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+.sensor-info-panel {
+    background: rgba(36, 223, 173, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 320px;
+    border: 1px solid rgba(36, 223, 173, 0.1);
+}
+
+.sensor-details {
+    display: none;
+    color: var(--text-primary);
+}
+
+.sensor-details h4 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.specs {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+}
+
+#item-1:checked~.sensor-info-panel #details-1,
+#item-2:checked~.sensor-info-panel #details-2,
+#item-3:checked~.sensor-info-panel #details-3 {
+    display: block;
+}
+
+.progress-bar {
+    height: 3px;
+    width: 100%;
+    background: rgba(36, 223, 173, 0.1);
+    border-radius: 2px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    display: block;
+    width: 33.33%;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Common styles for all section headings */
+.section-heading {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+/* Underline effect */
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #24dfad;
+    border-radius: 2px;
+}
+
+/* Gradient text effect */
+.section-heading span {
+    background: linear-gradient(45deg, #24dfad, #4fd1c5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Decorative elements */
+.section-heading::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 2px;
+    background: rgba(36, 223, 173, 0.3);
+    border-radius: 2px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+
+    .section-heading::before {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-heading {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .section-heading::before {
+        width: 100px;
+    }
+}
+
+/* Light Sensors Carousel Controls */
+#light-1:checked~.cards #light-sensor-3,
+#light-2:checked~.cards #light-sensor-1,
+#light-3:checked~.cards #light-sensor-2 {
+    transform: translatex(-40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+#light-1:checked~.cards #light-sensor-2,
+#light-2:checked~.cards #light-sensor-3,
+#light-3:checked~.cards #light-sensor-1 {
+    transform: translatex(40%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+#light-1:checked~.cards #light-sensor-1,
+#light-2:checked~.cards #light-sensor-2,
+#light-3:checked~.cards #light-sensor-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+#light-1:checked~.sensor-info-panel #light-details-1,
+#light-2:checked~.sensor-info-panel #light-details-2,
+#light-3:checked~.sensor-info-panel #light-details-3 {
+    display: block;
+}
+
+/* Light Sensor Progress Bar Controls */
+#light-1:checked~.sensor-info-panel .progress {
+    width: 33.33%;
+    transition: width 0.4s ease-in-out;
+}
+
+#light-2:checked~.sensor-info-panel .progress {
+    width: 66.66%;
+    transition: width 0.4s ease-in-out;
+}
+
+#light-3:checked~.sensor-info-panel .progress {
+    width: 100%;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Light Sensor Details Display Controls */
+#light-1:checked~.sensor-info-panel #light-details-1,
+#light-2:checked~.sensor-info-panel #light-details-2,
+#light-3:checked~.sensor-info-panel #light-details-3 {
+    display: block;
 }

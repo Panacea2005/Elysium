@@ -88,29 +88,157 @@
 
 /* Dashboard Preview */
 .dashboard-preview {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a192f 100%);
-    color: white;
+    padding: 120px 0;
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-preview::before {
+    content: '';
+    position: absolute;
+    top: -30vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('./images/tech-pattern.svg');
+    background-size: cover;
+    opacity: 0.1;
+    animation: parallaxScroll 30s linear infinite;
 }
 
 .dashboard-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 40px auto 0;
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.dashboard-text {
+    padding-right: 30px;
+}
+
+.dashboard-text h2 {
+    font-size: 4.2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.section-desc {
+    font-size: 2rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.feature-list i {
+    color: var(--primary-color);
+    font-size: 2.4rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(36, 223, 173, 0.1);
+    border-radius: 50%;
 }
 
 .dashboard-screen {
     position: relative;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: var(--transition-smooth);
+}
+
+.dashboard-screen:hover {
+    transform: perspective(1000px) rotateY(0deg);
 }
 
 .dashboard-screen img {
     width: 100%;
     height: auto;
     display: block;
+    border: 2px solid rgba(36, 223, 173, 0.2);
+    border-radius: 15px;
+}
+
+.dashboard-cta {
+    margin-top: 40px;
+}
+
+.dashboard-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.dashboard-btn:hover {
+    background: #20c69c;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .dashboard-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .feature-list li {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-text h2 {
+        font-size: 3.6rem;
+    }
+
+    .section-desc {
+        font-size: 1.8rem;
+    }
+
+    .feature-list li {
+        font-size: 1.6rem;
+    }
 }
 
 .dashboard-overlay {
@@ -242,7 +370,7 @@
 }
 
 .sensor-card h3 {
-    font-size: 2.9rem;
+    font-size: 2.3rem;
     margin-bottom: 15px;
     text-align: center;
     color: #24dfad;
@@ -296,7 +424,7 @@
 
 /* Common Styles */
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -423,10 +551,10 @@ h2 {
 
 .feature-list li {
     font-size: 1.8rem;
-    margin: 15px 0;
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-left: 85px;
 }
 
 .feature-list i {
@@ -456,6 +584,9 @@ h2 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    margin-left: -100px;
+    margin-top: 100px;
+    /* Added negative margin to shift left */
 }
 
 .point {
@@ -799,4 +930,308 @@ h2 {
 
 .swiper-pagination-bullet {
     background: #24dfad;
+}
+
+.dashboard-text .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 8rem;
+}
+
+.dashboard-text .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.dashboard-text .cta-button:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(36, 223, 173, 0.2);
+}
+
+.dashboard-text .cta-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.dashboard-text .cta-button i {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-text .cta-button:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .dashboard-text .cta-button {
+        padding: 12px 25px;
+        font-size: 1.6rem;
+        margin-left: 30px;
+    }
+}
+
+.dashboard-preview .container .dashboard-content {
+    background: linear-gradient(135deg, rgba(36, 223, 173, 0.05) 0%, rgba(10, 25, 47, 0.1) 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(36, 223, 173, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.dashboard-preview .container .dashboard-content h2 {
+    color: #24dfad;
+    text-shadow: 0 0 20px rgba(36, 223, 173, 0.3);
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+.dashboard-preview .container .dashboard-content .section-desc {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.dashboard-preview .container .dashboard-content .feature-list li {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.dashboard-preview .container .dashboard-content .feature-list li:hover {
+    color: #24dfad;
+}
+
+.dashboard-preview .container .dashboard-content .feature-list i {
+    background: rgba(36, 223, 173, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dashboard-preview .container .dashboard-content .feature-list li:hover i {
+    background: rgba(36, 223, 173, 0.2);
+    transform: scale(1.1);
+}
+
+.dashboard-image img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    /* Increased from 600px */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    /* Added negative margin to shift image left */
+}
+
+.dashboard-image:hover {
+    transform: translateY(-15px);
+    /* Increased from -10px */
+    box-shadow: 0 40px 80px rgba(36, 223, 173, 0.2);
+    /* Increased shadow */
+}
+
+.dashboard-image:hover img {
+    transform: scale(1.03);
+    /* Increased from 1.02 */
+}
+
+@media (max-width: 768px) {
+    .dashboard-preview {
+        padding: 60px 0;
+    }
+
+    .dashboard-image {
+        max-width: 100%;
+    }
+
+    .dashboard-image img {
+        max-height: 400px;
+        margin-left: 0;
+        /* Reset margin on mobile */
+    }
+}
+
+.dashboard-preview .container .dashboard-content .dashboard-text h2 {
+    text-align: center;
+    font-size: 4.2rem;
+    background: linear-gradient(to right, #24dfad, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    text-shadow: 0 0 30px rgba(36, 223, 173, 0.3);
+}
+
+.dashboard-preview .container .dashboard-content .dashboard-text .section-desc {
+    text-align: center;
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.dashboard-preview .container .dashboard-content .dashboard-text .section-desc::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #24dfad;
+    margin: 25px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(36, 223, 173, 0.5);
+}
+
+@media (max-width: 768px) {
+    .dashboard-preview .container .dashboard-content .dashboard-text h2 {
+        font-size: 3.2rem;
+    }
+
+    .dashboard-preview .container .dashboard-content .dashboard-text .section-desc {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsive Optimizations */
+@media (max-width: 1200px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 20px;
+    }
+
+    .dashboard-text {
+        text-align: center;
+        padding: 0;
+    }
+
+    .feature-list li {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .dashboard-image {
+        margin-left: 0;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .tech-hero h1 {
+        font-size: 3.6rem;
+    }
+
+    .tech-hero p {
+        font-size: 1.8rem;
+        padding: 0 20px;
+    }
+
+    .dashboard-preview .container .dashboard-content {
+        padding: 30px;
+    }
+
+    .dashboard-preview .container .dashboard-content h2 {
+        font-size: 3rem;
+    }
+
+    .sensor-showcase .sensor-card {
+        height: auto;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-preview {
+        padding: 60px 0;
+    }
+
+    .dashboard-preview .container .dashboard-content {
+        padding: 20px;
+    }
+
+    .dashboard-preview .container .dashboard-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .dashboard-preview .container .dashboard-content .section-desc {
+        font-size: 1.6rem;
+    }
+
+    .feature-list li {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .feature-list i {
+        font-size: 1.8rem;
+    }
+
+    .sensor-image {
+        height: 200px;
+    }
+
+    .sensor-info h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-hero h1 {
+        font-size: 3rem;
+    }
+
+    .tech-hero p {
+        font-size: 1.6rem;
+    }
+
+    .dashboard-preview .container .dashboard-content {
+        padding: 15px;
+    }
+
+    .dashboard-preview .container .dashboard-content h2 {
+        font-size: 2.4rem;
+    }
+
+    .feature-list li {
+        font-size: 1.4rem;
+        gap: 10px;
+    }
+
+    .sensor-showcase {
+        padding: 60px 0;
+    }
+
+    .sensor-card {
+        margin: 0 15px;
+    }
 }
