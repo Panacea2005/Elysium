@@ -139,6 +139,14 @@ const errorHandler = {
     }
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('background-video');
+    console.log('Video element:', video);
+    video.addEventListener('error', function(e) {
+        console.error('Video error:', e);
+    });
+});
+
 // Initialize all features
 document.addEventListener('DOMContentLoaded', () => {
     performanceMonitor.logPageLoadTime();
