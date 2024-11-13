@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot GPT - Smart Greenhouse</title>
+    <link rel="stylesheet" href="styles/style.css"> 
+    <link rel="stylesheet" href="styles/technologies.css"> 
+    <link rel="icon" href="styles/images/Logo.png" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="styles/images/Logo.png" alt="Elysium logo"></a>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="technologies.html">Technologies</a></li>
+                <li><a href="chatbot.html" class="active">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="chat-container">
+        <h1>Chatbot GPT</h1>
+        <div id="chatbox">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message here...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script>
+        const apiKey = "sk-fbsoG0aUePKcflEs8c03Fc8e53D24cEb91A8Ae555870B2D9";
+        let instructions = "";
+        let conversationHistory = [];
+
+        // Load instructions from the file
+        async function loadInstructions() {
+            const response = await fetch('js/instruction.txt');
+            instructions = await response.text();
+            $('#messages').append(`<div><strong>Bot:</strong> Hi! I'm your assistant bot. How can I help you today? Feel free to ask anything!</div>`);
+        }
+
+        $(document).ready(function() {
+            loadInstructions(); // Load instructions on page load
+
+            $('#send-button').click(async function() {
+                const userInput = $('#user-input').val();
+                if (!userInput) return;  // If input is empty, do nothing
+
+                // Display user message
+                $('#messages').append(`<div><strong>User:</strong> ${userInput}</div>`);
+                $('#user-input').val('');  // Clear input
+
+                // Add user input to conversation history
+                conversationHistory.push({ role: "user", content: userInput });
+
+                // Make API request to OpenAI
+                try {
+                    const response = await fetch("https://api.keyai.shop/v1/chat/completions", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${apiKey}`
+                        },
+                        body: JSON.stringify({
+                            model: "gpt-3.5-turbo",
+                            messages: [
+                                { role: "system", content: instructions },
+                                ...conversationHistory
+                            ]
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.status} ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    const botResponse = data.choices[0].message.content;
+                    $('#messages').append(`<div><strong>Bot:</strong> ${botResponse}</div>`);
+
+                    // Add bot response to conversation history
+                    conversationHistory.push({ role: "assistant", content: botResponse });
+                } catch (error) {
+                    console.error("An error occurred:", error);
+                    $('#messages').append(`<div><strong>Bot:</strong> Sorry, there was an error processing your request.</div>`);
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
