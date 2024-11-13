@@ -8,31 +8,69 @@
     <link rel="stylesheet" href="styles/chatbot.css"> 
     <link rel="icon" href="styles/images/Logo.png" type="image/png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 </head>
 <body>
     <header>
+        <!-- Enhanced navigation with larger, clear links -->
         <div class="logo">
             <a href="index.html"><img src="styles/images/Logo.png" alt="Elysium logo"></a>
         </div>
+        <div class="navDiv">
+            <label for="menu"><i class="fa-solid fa-bars"></i></label>
+        </div>
+        <input type="checkbox" id="menu">
         <nav>
             <ul class="nav">
                 <li><a href="jobs.html">Jobs</a></li>
                 <li><a href="apply.html">Apply</a></li>
-                <li><a href="technologies.html">Technologies</a></li>
-                <li><a href="chatbot.html" class="active">Chatbot</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="technologies.html">Technologies</a></li> <!--New Page-->
+                <li><a href="chatbot.html">Support</a></li> <!--New Page-->
             </ul>
         </nav>
     </header>
 
-    <div class="chat-container">
-        <h1>Chatbot GPT</h1>
-        <div id="chatbox">
-            <div id="messages"></div>
+    <section class="chatbot">
+        <div class="chat-container">
+            <h1>Chatbot GPT</h1>
+            <div id="chatbox">
+                <div id="messages"></div>
+            </div>
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
         </div>
-        <input type="text" id="user-input" placeholder="Type your message here...">
-        <button id="send-button">Send</button>
-    </div>
+    </section>
+
+
+    <footer>
+        <section class="footer-section">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Elysium</h3>
+                    <p>Leading the future of smart agriculture through innovative AI and IoT solutions.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Location</h3>
+                    <p>Ho Chi Minh City, Vietnam</p>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 Elysium Inc. All rights reserved.
+            </div>
+        </section>
+    </footer>
+
 
     <script src="js/script.js"></script>
     <script src="js/chatbot.js"></script>

@@ -3,6 +3,16 @@ let instructions = "";
 let pdfContent = {};
 let conversationHistory = [];
 
+// Function to escape special characters
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 // Load instructions from the file
 async function loadInstructions() {
     const response = await fetch('js/instruction.txt');
@@ -51,7 +61,7 @@ $(document).ready(function() {
         if (!userInput) return;  // If input is empty, do nothing
 
         // Display user message
-        $('#messages').append(`<div><strong>User:</strong> ${userInput}</div>`);
+        $('#messages').append(`<div><strong>User:</strong> ${escapeHtml(userInput)}</div>`);
         $('#user-input').val('');  // Clear input
 
         // Add user input to conversation history
@@ -91,7 +101,7 @@ $(document).ready(function() {
 
             const data = await response.json();
             const botResponse = data.choices[0].message.content;
-            $('#messages').append(`<div><strong>Bot:</strong> ${botResponse}</div>`);
+            $('#messages').append(`<div><strong>Bot:</strong> ${escapeHtml(botResponse)}</div>`);
 
             // Add bot response to conversation history
             conversationHistory.push({ role: "assistant", content: botResponse });
