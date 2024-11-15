@@ -7,7 +7,7 @@ body {
 
 .chat-container {
     margin: 50px auto;
-    max-width: 900px;
+    max-width: 1200px;
     background: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -35,12 +35,11 @@ body {
 }
 
 .chat-container h1 {
-    background-color: #24dfad;
     color: #fff;
     padding: 20px;
     text-align: center;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 /* Chatbox Styles */
@@ -84,7 +83,7 @@ input[type="text"] {
     border: 1px solid #ddd;
     border-radius: 20px;
     margin: 20px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 input[type="text"]:focus {
