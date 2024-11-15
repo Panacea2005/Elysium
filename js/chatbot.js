@@ -53,15 +53,12 @@ async function loadPDF() {
 }
 
 $(document).ready(function() {
-    loadInstructions(); // Load instructions on page load
-    loadPDF(); // Load PDF content on page load
-
     $('#send-button').click(async function() {
         const userInput = $('#user-input').val();
         if (!userInput) return;  // If input is empty, do nothing
 
         // Display user message
-        $('#messages').append(`<div><strong>User:</strong> ${escapeHtml(userInput)}</div>`);
+        $('#messages').append(`<div class="message user"><strong>User:</strong> ${escapeHtml(userInput)}</div>`);
         $('#user-input').val('');  // Clear input
 
         // Add user input to conversation history
@@ -100,14 +97,31 @@ $(document).ready(function() {
             }
 
             const data = await response.json();
-            const botResponse = data.choices[0].message.content;
-            $('#messages').append(`<div><strong>Bot:</strong> ${escapeHtml(botResponse)}</div>`);
+            const botResponse = formatBotResponse(data.choices[0].message.content);
+            $('#messages').append(`<div class="message bot"><strong>Bot:</strong> ${botResponse}</div>`);
 
             // Add bot response to conversation history
             conversationHistory.push({ role: "assistant", content: botResponse });
         } catch (error) {
             console.error("An error occurred:", error);
-            $('#messages').append(`<div><strong>Bot:</strong> Sorry, there was an error processing your request.</div>`);
+            $('#messages').append(`<div class="message bot"><strong>Bot:</strong> Sorry, there was an error processing your request.</div>`);
         }
     });
 });
+
+// Function to format bot response
+function formatBotResponse(response) {
+    // Replace **text** with <strong>text</strong>
+    response = response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    // Replace new lines with <br> for line breaks
+    response = response.replace(/\n/g, '<br>');
+
+    // Replace - with <li> for lists
+    response = response.replace(/^- (.*)$/gm, '<li>$1</li>');
+
+    // Wrap lists with <ul>
+    response = response.replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>');
+
+    return response;
+}
